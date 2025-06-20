@@ -5,3 +5,4 @@ C:\Users\frosa\OneDrive\Documentos\ProyectSCI\ProyectSCI\obj\Debug\ProyectSCI.cs
 C:\Users\frosa\OneDrive\Documentos\ProyectSCI\ProyectSCI\obj\Debug\ProyectSCI.csproj.CoreCompileInputs.cache
 C:\Users\frosa\OneDrive\Documentos\ProyectSCI\ProyectSCI\obj\Debug\ProyectSCI.exe
 C:\Users\frosa\OneDrive\Documentos\ProyectSCI\ProyectSCI\obj\Debug\ProyectSCI.pdb
+C:\Users\frosa\OneDrive\Documentos\ProyectSCI\ProyectSCI\obj\Debug\ProyectSCI.exe.config
