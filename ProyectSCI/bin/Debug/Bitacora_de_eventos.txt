@@ -1,0 +1,3 @@
+2025-06-20 14:06:45 - ALERTA: Sensor de Temperatura 1 en [Planta 2] activado ---> Temp: 510°C
+2025-06-20 14:06:45 - ALERTA: Sensor de Temperatura 3 en [Planta 3] activado ---> Temp: 502°C
+2025-06-20 14:06:45 - ALERTA: Sensor de Temperatura 2 en [Planta 4] activado ---> Temp: 483°C
