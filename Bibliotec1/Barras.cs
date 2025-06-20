@@ -11,18 +11,22 @@ namespace Bibliotec1
     {
         public void Barra()
         {
+            // Barra de progreso para iniciar el sistema
             Console.ForegroundColor = ConsoleColor.Green;
             const int total = 100;
             const int anchoBarra = 50;
             for (int i = 0; i <= total; i++)
             {
+                // Calcular el porcentaje y el número de bloques para la barra
                 double porcentaje = i / (double)total;
                 int bloques = (int)(porcentaje * anchoBarra);
+                // Crear la barra de progreso con bloques y espacios
                 string barra = new string('|', bloques) + new string('─', anchoBarra - bloques);
                 Console.Write($"\r    Iniciando Sistema!:   [{barra}] {i,3}%");
                 Thread.Sleep(80);
             }
         }
+        // Barra de progreso para los sensores (Es mas rapida, muestra un mensaje distinto)
         public void Barra1(string planta, int time)
         {
             const int total = 100;

@@ -19,6 +19,7 @@ namespace Bibliotec1
             switch (Rsist)
             {
                 case 1:
+                    // Determina si el archivo existe, luego reescribe todo por una cadena vacia
                     Console.ForegroundColor = ConsoleColor.Red;
                     File.WriteAllText("Bitacora_de_eventos.txt", string.Empty);
                     Console.Clear();
@@ -29,6 +30,7 @@ namespace Bibliotec1
                     Console.Clear();
                     break;
                 case 2:
+                    // Verifica si el archivo existe y lo elimina
                     if (File.Exists("Bitacora_de_eventos.txt"))
                     {
                         Console.ForegroundColor = ConsoleColor.Red;

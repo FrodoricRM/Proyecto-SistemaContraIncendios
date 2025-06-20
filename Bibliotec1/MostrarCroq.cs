@@ -10,12 +10,13 @@ namespace Bibliotec1
 {
     public class MostrarCroq
     {
+        //Este método muestra un croquis de las plantas con los sensores de humo y temperatura
         public void MostrarCroqui()
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             Random rnd = new Random();
             const int anchoInterior = 45;
-            while (!Console.KeyAvailable)
+            while (!Console.KeyAvailable)//Mientras no se presione una tecla, el monitoreo continuará
             {
                 bool hayAlarmaHumo = false;
                 bool hayAlarmaTemp = false;
@@ -49,7 +50,7 @@ namespace Bibliotec1
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine("└" + new string('─', anchoInterior) + "┘\n");
                 }
-
+                //Si existen alertas en cualquiera de ambos tipos de sensores se deja de refrescar y se guarda el evento en la bitácora
                 if (hayAlarmaHumo == true || hayAlarmaTemp == true)
                 {
 
@@ -59,25 +60,69 @@ namespace Bibliotec1
                     // Mostrar mensaje si hubo alarma
                     if (hayAlarmaHumo == true)
                     {
-                        Console.Beep(1000, 500);
+                        for (int i = 0; i < 10; i++)
+                        {
+                            Console.Beep(1500, 150);
+                            Console.Beep(800, 150);
+
+                            if (i % 2 == 0)
+                            {
+                                Console.BackgroundColor = ConsoleColor.Red;
+                            }
+                            else
+                            {
+                                Console.BackgroundColor = ConsoleColor.Yellow;
+                            }
+                            Console.Clear();
+                        }
+                        Console.ResetColor();
+                        Console.Clear();
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("¡ALERTA, Sensor de Humo Encendido !");
-                    }
-                    else
-                    {
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine("Todos los sensores de Humo están en estado normal.");
+                        Console.WriteLine("¡¡¡Sensor de Humo Encendido!!!");
+                        Console.WriteLine("\n");
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        Console.WriteLine("  **---------------------------------------------------------------------------------**");
+                        Console.WriteLine("  ||          __        **        **______   **_____**   __________      __          ||");
+                        Console.WriteLine("  ||         // *       ||        ||         ||     ||       ||         // *         ||");
+                        Console.WriteLine("  ||        //   *      ||        ||         ||     ||       ||        //   *        ||");
+                        Console.WriteLine("  ||       //     *     ||        ||----     ||=====**       ||       //     *       ||");
+                        Console.WriteLine("  ||      //=======*    ||        ||         ||  *           ||      //=======*      ||");
+                        Console.WriteLine("  ||     //         *   ||        ||         ||    *         ||     //         *     ||");
+                        Console.WriteLine("  ||    //           *  **=====   **======   ||      *       ||    //           *    || ");
+                        Console.WriteLine("  **---------------------------------------------------------------------------------**");
                     }
                     if (hayAlarmaTemp == true)
                     {
-                        Console.Beep(1000, 500);
+                        for (int i = 0; i < 10; i++)
+                        {
+                            Console.Beep(1500, 150);
+                            Console.Beep(800, 150);
+
+                            if (i % 2 == 0)
+                            {
+                                Console.BackgroundColor = ConsoleColor.Red;
+                            }
+                            else
+                            {
+                                Console.BackgroundColor = ConsoleColor.Yellow;
+                            }
+                            Console.Clear();
+                        }
+                        Console.ResetColor();
+                        Console.Clear();
                         Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.WriteLine("¡ALERTA, Sensor de Temperatura Encendido !");
-                    }
-                    else
-                    {
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine("Todos los sensores de Temperatura están en estado normal.");
+                        Console.WriteLine("¡¡¡ Sensor de Temperatura Encendido!!!!");
+                        Console.WriteLine("\n");
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.WriteLine("  **---------------------------------------------------------------------------------**");
+                        Console.WriteLine("  ||          __        **        **______   **_____**   __________      __          ||");
+                        Console.WriteLine("  ||         // *       ||        ||         ||     ||       ||         // *         ||");
+                        Console.WriteLine("  ||        //   *      ||        ||         ||     ||       ||        //   *        ||");
+                        Console.WriteLine("  ||       //     *     ||        ||----     ||=====**       ||       //     *       ||");
+                        Console.WriteLine("  ||      //=======*    ||        ||         ||  *           ||      //=======*      ||");
+                        Console.WriteLine("  ||     //         *   ||        ||         ||    *         ||     //         *     ||");
+                        Console.WriteLine("  ||    //           *  **=====   **======   ||      *       ||    //           *    || ");
+                        Console.WriteLine("  **---------------------------------------------------------------------------------**");
                     }
                     Console.ForegroundColor = ConsoleColor.DarkGray;
                     Console.WriteLine("   Presione enter para regresar....");
@@ -93,8 +138,10 @@ namespace Bibliotec1
                 }
             }
         }
+        // Sensores: Muestra el estado de los sensores de una planta específica
         public void Sensores(Random rnd, ref bool hayAlarma, int planta, int anchoInterior, string icono, string icono_1, int min, int max, int min_1, int humoTemp)
         {
+            // Genera un número aleatorio para determinar si hay alarma o no
             for (int s = 1; s <= 3; s++)
             {
                 string texto = "";
@@ -107,11 +154,20 @@ namespace Bibliotec1
                 {
                     alarma = rnd.Next(min_1, min);
                 }
-
+                // Verifica si la alarma supera el umbral mínimo
                 if (alarma >= min)
                 {
+                    // Se activa la alarma y se registra el evento
                     hayAlarma = true;
-                    RegistEvent("ALERTA: Sensor de Humo " + s + " en [Planta " + planta + "] activado ---> Temp: " + alarma + "°C");
+                    if (humoTemp == 1)
+                    {
+                        RegistEvent("ALERTA: Sensor de Humo " + s + " en [Planta " + planta + "] activado ---> Humo: " + alarma + "°C");
+                    }
+                    else
+                    {
+                        RegistEvent("ALERTA: Sensor de Temperatura " + s + " en [Planta " + planta + "] activado ---> Temp: " + alarma + "°C");
+                    }
+                    // Se muestra el mensaje de alerta en la consola, dependiendo a si es de humo (humotemp = 1) o temperatura (humotemp = 0)
                     if (humoTemp == 1)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
@@ -131,6 +187,7 @@ namespace Bibliotec1
                 }
                 else
                 {
+                    // Si no hay alarma, se muestra el estado normal del sensor, y se continua la verificacion
                     if (humoTemp == 1)
                     {
                         Console.ForegroundColor = ConsoleColor.Green;
@@ -150,10 +207,13 @@ namespace Bibliotec1
                 }
             }
         }
+        // RegistEvent: Registra eventos en un archivo de texto
         public void RegistEvent(string mensaje)
         {
             string rutarchi = "Bitacora_de_eventos.txt";
+            //Obtiene la hora actual, en el formado indicado como parametro
             string entrada = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + " - " + mensaje;
+            // Verifica si el archivo existe, si no, lo crea y escribe lo que se le pase como segundo argumento
             File.AppendAllText(rutarchi, entrada + Environment.NewLine); //escribir texto en un archivo de forma que añade (no sobrescribe) el contenido anterior
         }
     }

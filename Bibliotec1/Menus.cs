@@ -8,6 +8,7 @@ namespace Bibliotec1
 {
     public class Menus
     {
+        // Este es el metodo de entrada principal para la aplicación.
         public void MenuPrinc(int MP, ref bool salir)
         {
             switch (MP)
@@ -36,6 +37,7 @@ namespace Bibliotec1
                     break;
             }
         }
+        //Muestra el menú secundario y permite al usuario seleccionar una opción
         public void MenuSec()
         {
             bool salir1 = false;

@@ -83,6 +83,7 @@ namespace Bibliotec1
                     break;
             }
         }
+        //ComprobarSen: Muestra el estado de los sensores de una planta específica
         public void ComprobarSen(string planta)
         {
             Console.ForegroundColor = ConsoleColor.White;
@@ -93,6 +94,8 @@ namespace Bibliotec1
             MostrarEst("Humo");
             MostrarEst("Temperatura");
         }
+        // MostrarEst: Muestra el estado de los sensores de humo y temperatura,
+        // tambien genera la posibilidad de que haya errores y como actuar en ese caso
         public void MostrarEst(string tipo)
         {
             Random rand = new Random();

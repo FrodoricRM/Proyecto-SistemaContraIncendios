@@ -11,6 +11,8 @@ namespace Bibliotec1
     {
         public void BitadeEventos()
         {
+            //Verificar si existe el archivo "Bitacora_de_eventos.txt" y mostrar su contenido
+            //Si no existe, solo se muestra un mensaje
             if (File.Exists("Bitacora_de_eventos.txt"))
             {
                 Console.ForegroundColor = ConsoleColor.White;

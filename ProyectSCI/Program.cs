@@ -12,6 +12,7 @@ namespace ProyectSCI
     {
         static void Main(string[] args)
         {
+            // Este es el punto de entrada principal para la aplicación.
             bool salir = false;
             do
             {
@@ -29,8 +30,9 @@ namespace ProyectSCI
                 Console.WriteLine("Ingrese la opción que desea...");
                 int MP = int.Parse(Console.ReadLine());
                 Console.Clear();
+                // Llamada a la clase Menus y al método MenuPrinc, este ejecuta las acciones acorde al numero ingresado
                 Menus men = new Menus();
-                men.MenuPrinc(MP, ref salir); //si salir es falso entonces se ejecuta la biblioteca
+                men.MenuPrinc(MP, ref salir);
             } while (!salir);
             if (!salir)
             {
