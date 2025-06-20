@@ -1,0 +1,6 @@
+C:\Users\frosa\OneDrive\Documentos\Astral\ProyectSCI\Bibliotec1\bin\Debug\Bibliotec1.dll
+C:\Users\frosa\OneDrive\Documentos\Astral\ProyectSCI\Bibliotec1\bin\Debug\Bibliotec1.pdb
+C:\Users\frosa\OneDrive\Documentos\Astral\ProyectSCI\Bibliotec1\obj\Debug\Bibliotec1.csproj.AssemblyReference.cache
+C:\Users\frosa\OneDrive\Documentos\Astral\ProyectSCI\Bibliotec1\obj\Debug\Bibliotec1.csproj.CoreCompileInputs.cache
+C:\Users\frosa\OneDrive\Documentos\Astral\ProyectSCI\Bibliotec1\obj\Debug\Bibliotec1.dll
+C:\Users\frosa\OneDrive\Documentos\Astral\ProyectSCI\Bibliotec1\obj\Debug\Bibliotec1.pdb
